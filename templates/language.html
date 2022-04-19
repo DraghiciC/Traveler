@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css'>
+    <link rel='stylesheet' href='../static/css/style.css'>
+</head>
+<body>
+<div id="select">
+    <h1>Pick a language</h1>
+<select id="selectpicker" class="selectpicker" data-width="fit">
+    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+    <option  data-content='<span class="flag-icon flag-icon-ro"></span> Romanian'>Romanian</option>
+    <option  data-content='<span class="flag-icon flag-icon-dz"></span> Arabic'>Arabic</option>
+    <option  data-content='<span class="flag-icon flag-icon-bd"></span> Bengali'>Bengali</option>
+    <option  data-content='<span class="flag-icon flag-icon-cz"></span> Czech'>Czech</option>
+    <option  data-content='<span class="flag-icon flag-icon-nl"></span> Dutch'>Dutch</option>
+    <option  data-content='<span class="flag-icon flag-icon-eg"></span> Egyptian'>Egyptian</option>
+    <option  data-content='<span class="flag-icon flag-icon-gf"></span> French'>French</option>
+    <option  data-content='<span class="flag-icon flag-icon-de"></span> German'>German</option>
+    <option  data-content='<span class="flag-icon flag-icon-gr"></span> Greek'>Greek</option>
+    <option  data-content='<span class="flag-icon flag-icon-hu"></span> Hungarian'>Hungarian</option>
+    <option  data-content='<span class="flag-icon flag-icon-id"></span> Indonesian'>Indonesian</option>
+    <option  data-content='<span class="flag-icon flag-icon-it"></span> Italian'>Italian</option>
+    <option  data-content='<span class="flag-icon flag-icon-jp"></span> Japanese'>Japanese</option>
+    <option  data-content='<span class="flag-icon flag-icon-kr"></span> Korean'>Korean</option>
+    <option  data-content='<span class="flag-icon flag-icon-my"></span> Malaysian'>Malaysian</option>
+    <option  data-content='<span class="flag-icon flag-icon-cn"></span> Mandarin'>Mandarin</option>
+    <option  data-content='<span class="flag-icon flag-icon-pl"></span> Polish'>Polish</option>
+    <option  data-content='<span class="flag-icon flag-icon-pt"></span> Portuguese'>Portuguese</option>
+    <option  data-content='<span class="flag-icon flag-icon-ru"></span> Russian'>Russian</option>
+    <option  data-content='<span class="flag-icon flag-icon-pk"></span> Sindhi'>Sindhi</option>
+    <option  data-content='<span class="flag-icon flag-icon-es"></span> Spanish'>Spanish</option>
+    <option  data-content='<span class="flag-icon flag-icon-th"></span> Thai'>Thai</option>
+    <option  data-content='<span class="flag-icon flag-icon-tr"></span> Turkish'>Turkish</option>
+    <option  data-content='<span class="flag-icon flag-icon-ua"></span> Ukrainian'>Ukrainian</option>
+    <option  data-content='<span class="flag-icon flag-icon-vn"></span> Vietnamese'>Vietnamese</option>
+</select>
+<button id="button" type="button" ><a id="link" href="{{ url_for('chat')}}" onclick="contFunc()"><div>Continue</div></a></button></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<script>
+
+    function contFunc() {
+        var e=document.getElementById("selectpicker");
+        var cont=document.getElementById("link");
+        cont.href=cont.href+'/'+e.options[e.selectedIndex].value.toLowerCase();
+        document.cookie = "language="+e.options[e.selectedIndex].value.toLowerCase()+";";
+    };
+
+    $(function(){
+    $('.selectpicker').selectpicker();
+    });
+</script>
+</body>
+</html>

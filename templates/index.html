@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block style %}
+<link rel="stylesheet" href="../static/css/style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="../static/index.js"></script>
+{% endblock %}
+{% block content %}
+    <h1>{% block title %} Welcome to Traveler {% endblock %}</h1>
+    <div id="map-container">
+        <input id="pac-input" class="controls" type="text" style="display:none;" placeholder="Where do you want to travel?"/>
+        <button id="select-location-btn" type="button" style="display:none;"><a id="link" href="{{ url_for('language')}}" onclick="contFunc()"><div>Go</div></a></button>
+        <div id="map"></div>
+        <div id="infowindow-content">
+        <span id="place-name" class="title"></span><br />
+        <span id="place-id" style="display:hidden;"></span><br />
+        <span id="place-address"></span>
+        </div>
+    </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCx7stMQ4xmLKeF99RAmsueJrJ1ZVwe6AA&callback=initAutocomplete&libraries=places&v=weekly" async></script>
+{% endblock %}

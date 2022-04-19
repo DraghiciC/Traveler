@@ -1,0 +1,8 @@
+Flask==1.1.2
+Flask_SocketIO==4.3.2
+python-engineio==3.14.2
+google-cloud-translate
+mysql-connector-python
+pycountry
+googlemaps
+geocoder
